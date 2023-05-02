@@ -1,0 +1,10 @@
+$montserrat: "Montserrat", sans-serif;
+
+* {
+  font-family: $montserrat;
+}
+
+body {
+  max-width: 1220px;
+  margin-inline: auto;
+}
