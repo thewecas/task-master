@@ -2,7 +2,38 @@
   font-family: "Montserrat", sans-serif;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 body {
-  max-width: 1220px;
+  max-width: 700px;
+  height: 100vh;
   margin-inline: auto;
+  background-image: linear-gradient(45deg, #568fa9, rgb(53, 72, 127));
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+nav {
+  margin-top: 8rem;
+}
+
+.brand-logo {
+  letter-spacing: 2px;
+}
+
+.task-text {
+  outline: transparent;
+  border: transparent;
+}
+
+.para {
+  border: 2px solid red;
+}
+
+@media screen and (width < 767px) {
+  nav {
+    margin-top: 0rem;
+  }
 }/*# sourceMappingURL=style.css.map */
