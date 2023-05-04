@@ -29,10 +29,54 @@ nav {
 .task-text {
   outline: transparent;
   border: transparent;
+  &:active,
+  &:focus {
+    box-shadow: none;
+  }
 }
 
-.para {
-  border: 2px solid red;
+.recent-tasks-section {
+  ul {
+    li {
+      background-color: white;
+      margin-block: 0.25rem;
+      input[type="checkbox"] {
+        height: 1.5rem;
+        width: 2.25rem;
+        padding: 0;
+        margin: 0;
+        border: 2px solid rgb(117, 132, 214);
+        &:focus,
+        &:active {
+          // border: none;
+          outline: transparent;
+          box-shadow: none;
+        }
+      }
+      p {
+        background-color: transparent;
+        margin-block: 0;
+      }
+    }
+
+    .task-completed {
+      background-color: rgb(197, 197, 197);
+      p {
+        position: relative;
+        &::after {
+          content: "";
+          display: block;
+          width: 100%;
+          height: 2px;
+          background-color: black;
+          position: absolute;
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
 }
 
 @media screen and (width<767px) {

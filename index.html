@@ -29,9 +29,9 @@
 
     <div class="container new-task-container my-2">
         <div class="input-group input-group-lg">
-            <input type="text" class="form-control fs-6 fw-bold" placeholder="My Task" aria-describedby="new-task-btn"
-                onkeydown="checkforEnter()" id="task-input">
-            <button class="btn bg-primary-subtle text-dark fs-6 fw-bold" type="button" id="new-task-btn"><i
+            <input type="text" class="task-text form-control fs-6 fw-bold" placeholder="My Task" aria-describedby="new-task-btn"
+                onkeydown="checkforKey('new-task')" id="task-input">
+            <button class="new add-btn btn bg-primary-subtle text-dark fs-6 fw-bold" type="button" id="new-task-btn"><i
                     class="bi bi-save px-1"></i> Add task
             </button>
 
@@ -40,9 +40,11 @@
 
 
 
-    <div class="container recent-tasks-section mt-5">
-        <ul class=list-group "  id="recent-task-container">
+    <div class="container recent-tasks-section mt-4">
+        <ul class=list-group "  id="recent-task-container" >
+           
 
+             
         </ul>
     </div>
 
@@ -54,33 +56,35 @@
                     <p class="fw-bold fs-5">Edit Task</p>
                 </div>
                 <div class="modal-body ">
-                    <input type="text" class="task-text form-control fs-6 fw-bold" value="Hello">
+                    <input type="text" class="task-text form-control fs-6 fw-bold" id="modal-input" onkeydown="checkforKey('edit-task')" >
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-success">Save</button>
+                    <button type="button" class="edit cancel-btn btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="edit save-btn btn btn-success" onclick="saveTask(this.id)">Save</button>
                 </div>
             </div>
         </div>
     </div>
 
 
-    <div class="modal fade " id="delete-task" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade " id="delete-task" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" onkeydown="checkforKey('delete-task')">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header p-0 ps-4 pt-4">
                     <p class="fw-bold fs-5">Delete Task, Are you Sure?</p>
                 </div>
                 <div class="modal-body ">
-                    <input type="text" class="task-text form-control fs-6 fw-bold" value="Hello">
+                    <input type="text" class="task-text form-control fs-6 fw-bold" id="modal-text" readonly>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn bg-danger text-white">Delete</button>
+                    <button type="button" class="delete cancel-btn2 btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="delete delete-btn2 btn bg-danger text-white" onclick="deleteTask(this.id)">Delete</button>
                 </div>
             </div>
         </div>
     </div>
+
+
 
 
 
@@ -98,3 +102,5 @@
 </body>
 
 </html>
+
+
